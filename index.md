@@ -44,13 +44,43 @@ This AWS architecture automates the process of generating DynamoDB backup logs a
         - Role name: Lambada-role
         - Policy Templates: None
         
-**Edit the Lambda Role to allow permissions to handle events and backups:**
+**Edit the Lambda Role to allow permissions to handle events and backups**
 
   - Navigate to the IAM service, and select the “Lambda-role” that was created in the previous step. This will take you to the “Summary” page.
   - Under the “Permissions” tab, select the “Policy Name”.
   - Select “Edit policy” and under the JSON tab, modify the JSON code to
 
-![accuracy-f-score](/img/accuracy-f-score.png) 
+```markdown
+
+{
+"Version": "2012-10-17",
+
+"Statement": [
+
+{
+	"Effect": "Allow",
+
+	"Action": [
+		"logs:CreateLogGroup",
+		"logs:CreateLogStream",
+		"logs:PutLogEvents"
+],
+"Resource": "arn:aws:logs:*:*:*"
+},
+
+{
+
+	"Action": [
+		"dynamodb:CreateBackup",
+		"dynamodb:DeleteBackup",
+		"dynamodb:ListBackups"
+	],
+	"Effect": "Allow",
+	"Resource": "*"
+	}
+]
+}
+```
 
   - Select “Review Policy” and then “Save Changes”.
   
