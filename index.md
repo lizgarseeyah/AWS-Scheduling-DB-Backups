@@ -26,7 +26,6 @@ This AWS architecture automates the process of generating DynamoDB backup logs a
 
 ### Pre-Lab Configuration:
 
-- S3 bucket - backup-logs-dydb
 - DynamoDB table - Movies
 - VPC (based on Cloud9 IDE configuration)
 
