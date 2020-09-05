@@ -2,7 +2,7 @@
 
 This AWS architecture automates the process of generating DynamoDB backup logs and stores the logs in the CloudWatch Logs service. This solution is useful in situations where a system is needed to track incoming data for oversight or compliance reasons. A slight modification like integrating an S3 bucket can create a cost-efficient daily DynamoDB backup store for data processing and storage.
 
-![diagram](/img/diagram)
+![diagram](/img/diagram.png)
 
 ### Resources Used:
 
